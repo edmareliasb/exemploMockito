@@ -1,4 +1,4 @@
-package br.com.caelum.leilao.servico;
+package br.com.estudo.mock.leilao.servico;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -10,9 +10,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import br.com.caelum.leilao.builder.CriadorDeLeilao;
-import br.com.caelum.leilao.dominio.Leilao;
-import br.com.caelum.leilao.infra.dao.LeilaoDao;
+import br.com.estudo.mock.leilao.builder.CriadorDeLeilao;
+import br.com.estudo.mock.leilao.dominio.Leilao;
+import br.com.estudo.mock.leilao.infra.dao.LeilaoDao;
+import br.com.estudo.mock.leilao.servico.EncerradorDeLeilao;
 
 public class EncerradorDeLeilaoTest {
 

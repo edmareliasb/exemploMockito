@@ -1,10 +1,10 @@
-package br.com.caelum.leilao.servico;
+package br.com.estudo.mock.leilao.servico;
 
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.caelum.leilao.dominio.Leilao;
-import br.com.caelum.leilao.infra.dao.LeilaoDao;
+import br.com.estudo.mock.leilao.dominio.Leilao;
+import br.com.estudo.mock.leilao.infra.dao.LeilaoDao;
 
 public class EncerradorDeLeilao {
 

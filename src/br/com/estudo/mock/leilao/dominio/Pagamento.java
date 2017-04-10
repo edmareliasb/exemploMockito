@@ -1,4 +1,4 @@
-package br.com.caelum.leilao.dominio;
+package br.com.estudo.mock.leilao.dominio;
 
 import java.util.Calendar;
 

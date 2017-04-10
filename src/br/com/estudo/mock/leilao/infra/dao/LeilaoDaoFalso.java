@@ -1,9 +1,9 @@
-package br.com.caelum.leilao.infra.dao;
+package br.com.estudo.mock.leilao.infra.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.caelum.leilao.dominio.Leilao;
+import br.com.estudo.mock.leilao.dominio.Leilao;
 
 public class LeilaoDaoFalso {
 

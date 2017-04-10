@@ -1,7 +1,11 @@
-package br.com.caelum.leilao.dominio;
+package br.com.estudo.mock.leilao.dominio;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import br.com.estudo.mock.leilao.dominio.Lance;
+import br.com.estudo.mock.leilao.dominio.Leilao;
+import br.com.estudo.mock.leilao.dominio.Usuario;
 
 
 public class LeilaoTest {
