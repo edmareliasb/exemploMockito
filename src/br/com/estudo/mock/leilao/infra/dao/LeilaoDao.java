@@ -15,7 +15,7 @@ import br.com.estudo.mock.leilao.dominio.Lance;
 import br.com.estudo.mock.leilao.dominio.Leilao;
 import br.com.estudo.mock.leilao.dominio.Usuario;
 
-public class LeilaoDao {
+public class LeilaoDao implements RepositorioDeLeiloes{
 
 	private Connection conexao;
 
@@ -132,4 +132,11 @@ public class LeilaoDao {
 	}
 	
 	public int x() { return 10; }
+	
+	/**
+	 * Impossivel mockar metodos estaticos
+	 * @return
+	 */
+	public static String teste() { return "teste"; }
+
 }

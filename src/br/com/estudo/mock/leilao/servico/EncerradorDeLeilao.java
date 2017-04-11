@@ -4,26 +4,34 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.estudo.mock.leilao.dominio.Leilao;
-import br.com.estudo.mock.leilao.infra.dao.LeilaoDao;
+import br.com.estudo.mock.leilao.infra.dao.RepositorioDeLeiloes;
 
 public class EncerradorDeLeilao {
 
 	private int encerrados = 0;
 
-	private LeilaoDao dao;
+	private final RepositorioDeLeiloes dao;
+	private final EnviadorDeEmail carteiro;
 
-	public EncerradorDeLeilao(LeilaoDao dao) {
-	    this.dao = dao;
-    }
+	public EncerradorDeLeilao(RepositorioDeLeiloes dao, EnviadorDeEmail carteiro) {
+		this.dao = dao;
+		this.carteiro = carteiro;
+	}
 
 	public void encerra() {
 		List<Leilao> todosLeiloesCorrentes = dao.correntes();
 
 		for (Leilao leilao : todosLeiloesCorrentes) {
-			if (comecouSemanaPassada(leilao)) {
-				leilao.encerra();
-				encerrados++;
-				dao.atualiza(leilao);
+			try {
+				if (comecouSemanaPassada(leilao)) {
+					leilao.encerra();
+					encerrados++;
+					dao.atualiza(leilao);
+					carteiro.envia(leilao);
+				}
+			} catch (Exception e) {
+				// salvo a excecao no sistema de logs
+				// e o loop continua!
 			}
 		}
 	}
